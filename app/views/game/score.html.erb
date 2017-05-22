@@ -1,0 +1,22 @@
+<h1>Game#score</h1>
+<p>Find me in app/views/game/score.html.erb</p>
+
+<div>
+  <p>the letters were</p>
+  <ul class="list-inline">
+    <% @grid.each do |letter|%>
+      <li> <%=  letter %> </li>
+    <% end %>
+  </ul>
+  <% time_taken = @end_time - @start_time %>
+  <p>It tooks you <%= time_taken %> seconds to find something</p>
+  <p>The length of your word was: <%= @attempt.length %></p>
+
+</div>
+
+<p>Your score is <%= @result[:score] %></p>
+<p><%= @result[:message] %></p>
+<p>The French translation for this is <%= @result[:translation] %></p>
+
+
+<%= link_to "Play again", game_game_path %>
